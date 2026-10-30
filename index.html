@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080914">
+  <meta name="description" content="MuDz offers free online tools to compress images, generate QR codes, resize pictures, convert units, create PDFs, and count words.">
+  <meta name="application-name" content="MuDz">
+  <title>MuDz — Your Tools. One Place.</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <img src="MuDz picture.jpeg" alt="MuDz logo" class="logo">
+    <span class="brand">MuDz</span>
+  </header>
+
+  <main class="hero">
+    <p class="eyebrow">SIMPLE. FAST. USEFUL.</p>
+
+    <h1>Your tools.<br><span>One place.</span></h1>
+
+    <p class="intro">
+      Useful tools for everyday tasks. Choose a tool, upload a file,
+      or enter text to get started.
+    </p>
+
+    <!-- ALL TOOL CARDS -->
+    <section class="tools" aria-label="Available tools">
+
+      <article class="tool-card">
+        <h2>Unit Converter</h2>
+        <p>Convert length, weight, temperature, and more.</p>
+        <a class="tool-button" href="#unit-converter">Open unit converter ↗</a>
+      </article>
+
+      <article class="tool-card">
+        <h2>Image to PDF</h2>
+        <p>Convert one image or combine multiple images into one PDF document.</p>
+        <a class="tool-button" href="#image-to-pdf">Open image to PDF ↗</a>
+      </article>
+
+      <article class="tool-card">
+        <h2>Image Compressor</h2>
+        <p>Reduce image file size directly in your browser.</p>
+        <a class="tool-button" href="#compressor">Open compressor ↗</a>
+      </article>
+
+      <article class="tool-card">
+        <h2>QR Code Generator</h2>
+        <p>Create QR codes from website links or text.</p>
+        <a class="tool-button" href="#qr-generator">Open QR generator ↗</a>
+      </article>
+
+      <article class="tool-card">
+        <h2>Image Resizer</h2>
+        <p>Resize pictures to the dimensions you need.</p>
+        <a class="tool-button" href="#image-resizer">Open image resizer ↗</a>
+      </article>
+
+      <article class="tool-card">
+        <h2>Word &amp; Character Counter</h2>
+        <p>Count words, characters, sentences, and paragraphs instantly.</p>
+        <a class="tool-button" href="#word-counter">Open word counter ↗</a>
+      </article>
+
+<article class="tool-card">
+  <h2>Password Generator</h2>
+  <p>Generate strong random passwords for your accounts.</p>
+  <a class="tool-button" href="#password-generator">
+    Open password generator ↗
+  </a>
+</article>
+
+<article class="tool-card">
+  <h2>Stopwatch &amp; Countdown Timer</h2>
+  <p>Track elapsed time or count down to zero.</p>
+  <a class="tool-button" href="#timer-tool">
+    Open timer ↗
+  </a>
+</article>
+
+<article class="tool-card">
+  <h2>Text Formatter</h2>
+  <p>Change text case and clean up your writing.</p>
+  <a class="tool-button" href="#text-formatter">
+    Open text formatter ↗
+  </a>
+</article>
+
+<!-- TOOL 10: PERCENTAGE CALCULATOR -->
+<article class="tool-card">
+  <p class="eyebrow">TOOL 10</p>
+  <h2>Percentage Calculator</h2>
+  <p>Calculate percentages quickly and easily.</p>
+  <a href="#percentage-calculator" class="tool-button">
+    Open Tool
+  </a>
+</article>
+
+<!-- TOOL 11: IMAGE CROPPER CARD -->
+<article class="tool-card">
+  <p class="eyebrow">TOOL 11</p>
+  <h2>Image Cropper</h2>
+  <p>Crop images and download the result.</p>
+  <a href="#image-cropper" class="tool-button">Open Tool</a>
+</article>
+
+<!-- TOOL 12: JSON FORMATTER CARD -->
+<article class="tool-card">
+  <p class="eyebrow">TOOL 12</p>
+  <h2>JSON Formatter &amp; Validator</h2>
+  <p>Format JSON neatly and check for errors.</p>
+  <a href="#json-formatter" class="tool-button">Open Tool</a>
+</article>
+
+<!-- TOOL 13: DATE CALCULATOR CARD -->
+<article class="tool-card">
+  <p class="eyebrow">TOOL 13</p>
+  <h2>Date Calculator</h2>
+  <p>Calculate date differences and future or past dates.</p>
+  <a href="#date-calculator" class="tool-button">Open Tool</a>
+</article>
+
+    </section>
+
+    <!-- TOOL 01: IMAGE COMPRESSOR -->
+    <section class="compressor tool-card" id="compressor">
+      <p class="eyebrow">TOOL 01</p>
+      <h2>Image Compressor</h2>
+      <p class="intro">
+        Select an image, choose its quality, and download your result.
+      </p>
+
+      <label class="upload-area" for="image-input">
+        <span class="upload-icon">↑</span>
+        <strong>Choose an image</strong>
+        <span>Click here to browse your files</span>
+      </label>
+
+      <input id="image-input" type="file" accept="image/jpeg,image/png,image/webp">
+
+      <div class="quality-control">
+        <label for="quality">Image quality</label>
+        <span id="quality-value">75%</span>
+        <input id="quality" type="range" min="10" max="95" value="75">
+        <p>Lower quality usually creates a smaller file.</p>
+      </div>
+
+      <img id="image-preview" alt="Selected image preview" hidden>
+
+      <button id="compress-button" class="tool-button" type="button">
+        Compress image
+      </button>
+
+      <p id="status" role="status" aria-live="polite">
+        Choose an image to get started.
+      </p>
+
+      <a id="download-link" class="tool-button download-button" href="#" hidden>
+        Download compressed image ↓
+      </a>
+    </section>
+
+    <!-- TOOL 02: QR CODE GENERATOR -->
+    <section class="qr-tool tool-card" id="qr-generator">
+      <p class="eyebrow">TOOL 02</p>
+      <h2>QR Code Generator</h2>
+      <p class="intro">
+        Turn a website link or text into a scannable QR code.
+      </p>
+
+      <label for="qr-text">Website link or text</label>
+      <input id="qr-text" type="text" placeholder="https://example.com"
+             maxlength="1500" autocomplete="url">
+
+      <button id="qr-generate" class="tool-button" type="button">
+        Generate QR code
+      </button>
+
+      <p id="qr-status" role="status" aria-live="polite">
+        Enter a link or text to get started.
+      </p>
+
+      <div id="qr-result" hidden>
+        <img id="qr-image" alt="Generated QR code">
+        <a id="qr-download" class="tool-button" href="#"
+           download="mudz-qr-code.png">
+          Download QR code ↓
+        </a>
+      </div>
+
+      <p class="tool-note">
+        QR generation loads an external library. Avoid entering passwords
+        or private information.
+      </p>
+    </section>
+
+    <!-- TOOL 03: IMAGE RESIZER -->
+    <section class="resizer-tool tool-card" id="image-resizer">
+      <p class="eyebrow">TOOL 03</p>
+      <h2>Image Resizer</h2>
+      <p class="intro">
+        Change an image's dimensions and download the resized picture.
+      </p>
+
+      <label class="upload-area" for="resize-input">
+        <span class="upload-icon">↔</span>
+        <strong>Choose an image</strong>
+        <span>Select a JPG, PNG, or WebP picture</span>
+      </label>
+
+      <input id="resize-input" type="file"
+             accept="image/jpeg,image/png,image/webp">
+
+      <img id="resize-preview" alt="Image resize preview" hidden>
+
+      <div class="resize-fields">
+        <div>
+          <label for="resize-width">Width (pixels)</label>
+          <input id="resize-width" type="number" min="1" max="10000"
+                 placeholder="e.g. 800">
+        </div>
+        <div>
+          <label for="resize-height">Height (pixels)</label>
+          <input id="resize-height" type="number" min="1" max="10000"
+                 placeholder="e.g. 600">
+        </div>
+      </div>
+
+      <label class="checkbox-label" for="keep-ratio">
+        <input id="keep-ratio" type="checkbox" checked>
+        Keep original proportions
+      </label>
+
+      <button id="resize-button" class="tool-button" type="button">
+        Resize image
+      </button>
+
+      <p id="resize-status" role="status" aria-live="polite">
+        Choose an image to get started.
+      </p>
+
+      <a id="resize-download" class="tool-button download-button" href="#"
+         download="mudz-resized-image.png" hidden>
+        Download resized image ↓
+      </a>
+    </section>
+
+    <!-- TOOL 04: UNIT CONVERTER -->
+    <section class="unit-tool tool-card" id="unit-converter">
+      <p class="eyebrow">TOOL 04</p>
+      <h2>Unit Converter</h2>
+      <p class="intro">Convert measurements quickly and easily.</p>
+
+      <label for="unit-category">What do you want to convert?</label>
+      <select id="unit-category">
+        <option value="length">Length</option>
+        <option value="weight">Weight</option>
+        <option value="temperature">Temperature</option>
+      </select>
+
+      <label for="unit-value">Enter a value</label>
+      <input id="unit-value" type="number" placeholder="Enter a number" value="1">
+
+      <div class="resize-fields">
+        <div>
+          <label for="unit-from">From</label>
+          <select id="unit-from"></select>
+        </div>
+        <div>
+          <label for="unit-to">To</label>
+          <select id="unit-to"></select>
+        </div>
+      </div>
+
+      <button id="unit-convert-button" class="tool-button" type="button">
+        Convert
+      </button>
+
+      <p id="unit-status" role="status" aria-live="polite">
+        Enter a value and press Convert.
+      </p>
+
+      <div class="unit-result" id="unit-result" hidden>
+        <p>Result</p>
+        <h3 id="unit-answer"></h3>
+      </div>
+    </section>
+
+    <!-- TOOL 05: IMAGE TO PDF -->
+    <section class="tool-card image-pdf-tool" id="image-to-pdf">
+      <p class="eyebrow">TOOL 05</p>
+      <h2>Image to PDF</h2>
+      <p class="intro">
+        Turn one picture or multiple pictures into a single PDF document.
+      </p>
+
+      <label for="pdf-images">Choose your images</label>
+      <input id="pdf-images" type="file"
+             accept="image/jpeg,image/png,image/webp" multiple>
+
+      <p class="pdf-help">
+        Select JPG, PNG, or WebP images. You can select more than one.
+      </p>
+
+      <div id="pdf-image-list" class="pdf-image-list"></div>
+
+      <div class="pdf-options">
+        <div>
+          <label for="pdf-page-size">PDF page size</label>
+          <select id="pdf-page-size">
+            <option value="a4">A4</option>
+            <option value="letter">Letter</option>
+            <option value="fit">Fit to image</option>
+          </select>
+        </div>
+        <div>
+          <label for="pdf-orientation">Orientation</label>
+          <select id="pdf-orientation">
+            <option value="portrait">Portrait</option>
+            <option value="landscape">Landscape</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="pdf-create-button" class="tool-button" type="button">
+        Create PDF
+      </button>
+
+      <p id="pdf-status" role="status" aria-live="polite">
+        Choose one or more images to begin.
+      </p>
+    </section>
+
+    <!-- TOOL 06: WORD & CHARACTER COUNTER -->
+    <section class="tool-card word-counter-tool" id="word-counter">
+      <p class="eyebrow">TOOL 06</p>
+      <h2>Word &amp; Character Counter</h2>
+      <p class="intro">
+        Type or paste your text below to count words, characters,
+        sentences, and paragraphs.
+      </p>
+
+      <label for="counter-text">Your text</label>
+      <textarea id="counter-text" rows="8"
+        placeholder="Start typing or paste your text here..."></textarea>
+
+      <div class="counter-results" aria-live="polite">
+        <p>Words: <strong id="word-count">0</strong></p>
+        <p>Characters: <strong id="character-count">0</strong></p>
+        <p>Characters without spaces: <strong id="character-no-spaces">0</strong></p>
+        <p>Sentences: <strong id="sentence-count">0</strong></p>
+        <p>Paragraphs: <strong id="paragraph-count">0</strong></p>
+      </div>
+
+      <button id="counter-clear" class="tool-button" type="button">
+        Clear text
+      </button>
+    </section>
+
+<!-- TOOL 10: PERCENTAGE CALCULATOR -->
+<section class="tool-card" id="percentage-calculator">
+  <p class="eyebrow">TOOL 10</p>
+  <h2>Percentage Calculator</h2>
+  <p class="intro">Calculate percentages, increases, and decreases.</p>
+
+  <h3>1. Find a percentage of a number</h3>
+  <label for="percent-rate">Percentage (%)</label>
+  <input id="percent-rate" type="number" placeholder="e.g. 15">
+
+  <label for="percent-number">Number</label>
+  <input id="percent-number" type="number" placeholder="e.g. 200">
+
+  <button class="tool-button" id="percent-calculate" type="button">
+    Calculate
+  </button>
+  <p id="percent-result" role="status" aria-live="polite">Your result will appear here.</p>
+
+  <hr>
+
+  <h3>2. Find what percentage one number is of another</h3>
+  <label for="percent-part">First number</label>
+  <input id="percent-part" type="number" placeholder="e.g. 45">
+
+  <label for="percent-whole">Total number</label>
+  <input id="percent-whole" type="number" placeholder="e.g. 180">
+
+  <button class="tool-button" id="percent-find" type="button">
+    Find percentage
+  </button>
+  <p id="percent-find-result" role="status" aria-live="polite">Your result will appear here.</p>
+
+  <hr>
+
+  <h3>3. Increase or decrease a number</h3>
+  <label for="percent-change-number">Starting number</label>
+  <input id="percent-change-number" type="number" placeholder="e.g. 100">
+
+  <label for="percent-change-rate">Percentage (%)</label>
+  <input id="percent-change-rate" type="number" placeholder="e.g. 20">
+
+  <label for="percent-change-type">Choose action</label>
+  <select id="percent-change-type">
+    <option value="increase">Increase</option>
+    <option value="decrease">Decrease</option>
+  </select>
+
+  <button class="tool-button" id="percent-change" type="button">
+    Calculate change
+  </button>
+  <p id="percent-change-result" role="status" aria-live="polite">Your result will appear here.</p>
+</section>
+
+<!-- TOOL 11: IMAGE CROPPER -->
+<section class="tool-card" id="image-cropper">
+  <p class="eyebrow">TOOL 11</p>
+  <h2>Image Cropper</h2>
+  <p class="intro">Upload an image, choose your crop area, and download it.</p>
+
+  <label for="crop-upload">Choose an image</label>
+  <input id="crop-upload" type="file" accept="image/*">
+
+  <label for="crop-ratio">Crop shape</label>
+  <select id="crop-ratio">
+    <option value="free">Free crop</option>
+    <option value="square">Square (1:1)</option>
+    <option value="landscape">Landscape (16:9)</option>
+    <option value="portrait">Portrait (9:16)</option>
+  </select>
+
+  <div id="crop-workspace" style="position:relative; max-width:100%; overflow:hidden; margin:16px 0; touch-action:none;">
+    <canvas id="crop-canvas" style="display:block; max-width:100%; height:auto; cursor:crosshair;"></canvas>
+  </div>
+
+  <p class="intro">Drag on the image to select the area you want to keep.</p>
+
+  <button id="crop-reset" class="tool-button" type="button">Reset selection</button>
+  <button id="crop-download" class="tool-button" type="button">Download cropped image</button>
+
+  <p id="crop-status" role="status" aria-live="polite">
+    Choose an image to get started.
+  </p>
+</section>
+
+<!-- TOOL 12: JSON FORMATTER & VALIDATOR -->
+<section class="tool-card" id="json-formatter">
+  <p class="eyebrow">TOOL 12</p>
+  <h2>JSON Formatter &amp; Validator</h2>
+  <p class="intro">Format JSON and check whether it's valid.</p>
+
+  <label for="json-input">Enter your JSON</label>
+  <textarea
+    id="json-input"
+    rows="10"
+    placeholder='{"name":"MuDz","tools":13}'
+    spellcheck="false"
+  ></textarea>
+
+  <label for="json-indent">Indentation</label>
+  <select id="json-indent">
+    <option value="2">2 spaces</option>
+    <option value="4">4 spaces</option>
+    <option value="tab">Tab</option>
+  </select>
+
+  <div class="tool-actions">
+    <button id="json-format" class="tool-button" type="button">
+      Format JSON
+    </button>
+    <button id="json-minify" class="tool-button" type="button">
+      Minify JSON
+    </button>
+    <button id="json-validate" class="tool-button" type="button">
+      Validate JSON
+    </button>
+  </div>
+
+  <p id="json-status" role="status" aria-live="polite">
+    Paste JSON above to get started.
+  </p>
+
+  <label for="json-output">Result</label>
+  <textarea
+    id="json-output"
+    rows="10"
+    readonly
+    spellcheck="false"
+    placeholder="Your result will appear here..."
+  ></textarea>
+
+  <button id="json-copy" class="tool-button" type="button">
+    Copy result
+  </button>
+</section>
+
+<!-- TOOL 13: DATE CALCULATOR -->
+<section class="tool-card" id="date-calculator">
+  <p class="eyebrow">TOOL 13</p>
+  <h2>Date Calculator</h2>
+  <p class="intro">Calculate the days between dates or find a date in the future or past.</p>
+
+  <h3>1. Days between two dates</h3>
+
+  <label for="date-start">Start date</label>
+  <input id="date-start" type="date">
+
+  <label for="date-end">End date</label>
+  <input id="date-end" type="date">
+
+  <button id="date-difference" class="tool-button" type="button">
+    Calculate days
+  </button>
+  <p id="date-difference-result" role="status" aria-live="polite">
+    Your result will appear here.
+  </p>
+
+  <hr>
+
+  <h3>2. Add or subtract days</h3>
+
+  <label for="date-base">Starting date</label>
+  <input id="date-base" type="date">
+
+  <label for="date-amount">Number of days</label>
+  <input id="date-amount" type="number" min="0" step="1" placeholder="e.g. 30">
+
+  <label for="date-operation">Action</label>
+  <select id="date-operation">
+    <option value="add">Add days</option>
+    <option value="subtract">Subtract days</option>
+  </select>
+
+  <button id="date-calculate" class="tool-button" type="button">
+    Calculate date
+  </button>
+  <p id="date-result" role="status" aria-live="polite">
+    Your result will appear here.
+  </p>
+</section>
+
+  </main>
+
+<!-- TOOL 09: TEXT FORMATTER -->
+<section class="tool-card" id="text-formatter">
+  <p class="eyebrow">TOOL 09</p>
+  <h2>Text Formatter</h2>
+  <p class="intro">Change text case and clean up your writing.</p>
+
+  <label for="formatter-input">Enter your text</label>
+  <textarea id="formatter-input" rows="7"
+    placeholder="Type or paste your text here..."></textarea>
+
+  <label for="formatter-mode">Choose formatting</label>
+  <select id="formatter-mode">
+    <option value="upper">UPPERCASE</option>
+    <option value="lower">lowercase</option>
+    <option value="title">Title Case</option>
+    <option value="sentence">Sentence case</option>
+    <option value="spaces">Remove extra spaces</option>
+  </select>
+
+  <button id="formatter-apply" class="tool-button" type="button">
+    Format text
+  </button>
+
+  <label for="formatter-output">Formatted text</label>
+  <textarea id="formatter-output" rows="7" readonly
+    placeholder="Your formatted text will appear here..."></textarea>
+
+  <button id="formatter-copy" class="tool-button" type="button">
+    Copy formatted text
+  </button>
+
+  <p id="formatter-status" role="status" aria-live="polite">
+    Enter text and choose a format.
+  </p>
+</section>
+
+
+<!-- TOOL 08: STOPWATCH & COUNTDOWN TIMER -->
+<section class="tool-card" id="timer-tool">
+  <p class="eyebrow">TOOL 08</p>
+  <h2>Stopwatch &amp; Countdown Timer</h2>
+
+  <h3>Stopwatch</h3>
+  <p id="stopwatch-display" role="timer">00:00.0</p>
+
+  <button id="stopwatch-start" class="tool-button" type="button">Start</button>
+  <button id="stopwatch-pause" class="tool-button" type="button">Pause</button>
+  <button id="stopwatch-reset" class="tool-button" type="button">Reset</button>
+
+  <hr>
+
+  <h3>Countdown Timer</h3>
+
+  <label for="countdown-minutes">Minutes</label>
+  <input id="countdown-minutes" type="number" min="0" max="999" value="1">
+
+  <label for="countdown-seconds">Seconds</label>
+  <input id="countdown-seconds" type="number" min="0" max="59" value="0">
+
+  <p id="countdown-display" role="timer">01:00</p>
+
+  <button id="countdown-start" class="tool-button" type="button">Start countdown</button>
+  <button id="countdown-pause" class="tool-button" type="button">Pause</button>
+  <button id="countdown-reset" class="tool-button" type="button">Reset</button>
+
+  <p id="countdown-status" role="status" aria-live="polite">Ready to count down.</p>
+</section>
+
+
+<!-- TOOL 07: PASSWORD GENERATOR -->
+<section class="tool-card" id="password-generator">
+  <p class="eyebrow">TOOL 07</p>
+  <h2>Password Generator</h2>
+  <p class="intro">Create a random password with your preferred options.</p>
+
+  <label for="password-length">Password length (8–64)</label>
+  <input id="password-length" type="number" min="8" max="64" value="16">
+
+  <div class="password-options">
+    <label><input id="password-lower" type="checkbox" checked> Lowercase letters</label>
+    <label><input id="password-upper" type="checkbox" checked> Uppercase letters</label>
+    <label><input id="password-numbers" type="checkbox" checked> Numbers</label>
+    <label><input id="password-symbols" type="checkbox" checked> Symbols</label>
+  </div>
+
+  <button id="password-generate" class="tool-button" type="button">
+    Generate password
+  </button>
+
+  <label for="password-output">Generated password</label>
+  <input id="password-output" type="text" readonly
+         autocomplete="off" placeholder="Your password appears here">
+
+  <button id="password-copy" class="tool-button" type="button">
+    Copy password
+  </button>
+
+  <p id="password-status" role="status" aria-live="polite">
+    Choose your options and generate a password.
+  </p>
+</section>
+
+  <footer>
+    <p>© 2026 MuDz · Your tools. One place.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- WORD COUNTER SCRIPT -->
+  <script>
+    (function () {
+      const textArea = document.getElementById("counter-text");
+      const wordCount = document.getElementById("word-count");
+      const characterCount = document.getElementById("character-count");
+      const characterNoSpaces = document.getElementById("character-no-spaces");
+      const sentenceCount = document.getElementById("sentence-count");
+      const paragraphCount = document.getElementById("paragraph-count");
+      const clearButton = document.getElementById("counter-clear");
+
+      if (!textArea) return;
+
+      function updateCounts() {
+        const text = textArea.value;
+        const trimmed = text.trim();
+
+        wordCount.textContent = trimmed
+          ? trimmed.split(/\s+/).length
+          : 0;
+
+        characterCount.textContent = text.length;
+        characterNoSpaces.textContent = text.replace(/\s/g, "").length;
+
+        const sentences = trimmed
+          ? (trimmed.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [])
+              .filter(sentence => sentence.trim().length > 0).length
+          : 0;
+
+        sentenceCount.textContent = sentences;
+
+        const paragraphs = text
+          .split(/\n\s*\n/)
+          .filter(paragraph => paragraph.trim().length > 0).length;
+
+        paragraphCount.textContent = paragraphs;
+      }
+
+      textArea.addEventListener("input", updateCounts);
+
+      clearButton.addEventListener("click", function () {
+        textArea.value = "";
+        updateCounts();
+        textArea.focus();
+      });
+
+      updateCounts();
+    })();
+  </script>
+
+<footer class="site-footer">
+  <p>&copy; 2026 MuDz. All rights reserved.</p>
+
+  <nav aria-label="Footer navigation">
+    <a href="about.html">About</a>
+    <span> | </span>
+    <a href="contact.html">Contact</a>
+    <span> | </span>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+</footer>
+
+</body>
+</html>
